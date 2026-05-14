@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 /* space-grotesk-300 - latin */
 @font-face {
   font-display: swap;
@@ -47,14 +48,15 @@
   src: url("./fonts/inter-v20-latin-700.woff2") format("woff2");
 }
 :root {
-  --clr-accent: #0038ff;
+  --clr-accent: #2a50bd;
   --clr-primary: #e2e9f5;
   --clr-secondary: #64748b;
   --clr-tertiary: #cfd4db;
-  --clr-dark: #0d0e10;
+  --clr-blue-dark: #0c0f18;
+  --clr-dark: #090911;
   --clr-light: #fff;
-  --font-heading: "SpaceGrotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter";
 }
 *,
 *::before,
@@ -72,8 +74,8 @@ body {
   font-family: var(--font-body);
   font-size: 1.6rem;
   line-height: 1.4;
-  background-color: var(--clr-primary);
-  color: var(--clr-dark);
+  background-color: var(--clr-dark);
+  color: var(--clr-primary);
   overflow-x: hidden;
 }
 
@@ -141,12 +143,19 @@ p {
 
 .block--title small {
   text-transform: uppercase;
+  letter-spacing: 0.3rem;
   color: var(--clr-secondary);
+  font-size: 1.2rem;
+}
+
+.block--title h2 {
+  font-size: 4.8rem;
 }
 
 .btn--accent {
+  display: inline-block;
   background-color: var(--clr-accent);
-  padding: 1rem 2rem;
+  padding: 2rem;
   border-radius: 5rem;
   font-size: 1.25rem;
 }
@@ -162,17 +171,28 @@ p {
 
 .header {
   padding: 2rem 0;
-  background-color: var(--clr-dark);
+  background-color: var(--clr-blue-dark);
   color: var(--clr-light);
 }
 .header_wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 140rem;
+  width: 100%;
+  margin: 0 auto;
 }
 .header nav ul {
   display: flex;
   gap: 3rem;
+}
+.header nav ul li a {
+  font-size: 1.5rem;
+}
+.branding {
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: var(--font-body);
 }
 .branding span {
   color: var(--clr-accent);
@@ -180,7 +200,7 @@ p {
 
 .banner {
   padding: 8rem 0;
-  background-color: var(--clr-dark);
+  background-color: var(--clr-blue-dark);
   color: var(--clr-light);
 }
 .banner_wrapper {
@@ -188,18 +208,29 @@ p {
   flex-direction: column;
   align-items: center;
 }
-.banner h1 {
+.banner small {
+  color: var(--clr-secondary);
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+}
+.banner span {
   color: var(--clr-accent);
+  font-size: 10rem;
+  font-weight: 700;
+  line-height: 8rem;
 }
 .banner p {
   max-width: 50rem;
-  margin-bottom: 3rem;
+  margin: 3rem 0;
+  text-align: center;
 }
 
 .scale {
+  margin-top: 8rem;
   padding: 8rem 0;
-  border-top: 0.1px solid var(--clr-secondary);
-  border-bottom: 0.1px solid var(--clr-secondary);
+  border-top: 0.1px solid #12121a;
+  border-bottom: 0.1px solid #12121a;
 }
 
 .scale_wrapper {
@@ -216,11 +247,30 @@ p {
   color: var(--clr-light);
 }
 
-.scale h3 {
+.scale h2 {
   color: var(--clr-light);
+  font-family: var(--font-heading);
+  font-weight: bold;
+  line-height: 4rem;
 }
 .scale small {
   color: var(--clr-secondary);
+}
+.scale_item ul {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.scale_item span {
+  font-size: 5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+.scale_item ul svg {
+  color: var(--clr-accent);
+}
+.scale_item small {
+  font-size: 1.2rem;
 }
 
 /*  */
@@ -239,23 +289,28 @@ p {
 .destination_card {
   background-color: rgba(33, 33, 34, 0.5);
   border-radius: 2rem;
-  padding: 2rem;
+  padding: 3rem;
 }
 .destination_card small {
   color: var(--clr-accent);
+  font-family: var(--font-heading);
+  letter-spacing: 0.8rem;
 }
-.destination_card h4 {
+.destination_card h3 {
   color: var(--clr-light);
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+  font-family: var(--font-heading);
 }
 .destination_card p {
-  color: var(--clr-primary);
+  color: var(--clr-secondary);
   max-width: 40rem;
   margin-bottom: 3rem;
 }
 .destination_card a {
   color: var(--clr-accent);
   text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
 }
 
 /*  */
@@ -267,13 +322,16 @@ p {
 .experience_wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5rem;
+  gap: 3rem;
+  align-items: center;
+  max-width: 90rem;
   margin-top: 3rem;
 }
 .experience_card {
   background-color: rgba(33, 33, 34, 0.5);
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 2rem;
+  width: 65rem;
 }
 .experience_card-top {
   display: flex;
@@ -282,6 +340,8 @@ p {
 }
 .experience_card small {
   text-transform: uppercase;
+  color: var(--clr-secondary);
+  font-size: 1.2rem;
 }
 .experience_card-icon {
   background: rgb(0, 56, 255, 0.1);
@@ -290,16 +350,16 @@ p {
 }
 .experience_card svg {
   color: var(--clr-accent);
+  border-radius: 5rem;
 }
 .experience_card h3 {
-  margin: 2rem 0;
+  margin: 1rem 0;
+  font-size: 2rem;
 }
 .experience_card p {
-  border-radius: 2rem;
-  padding: 2rem 0;
-  color: var(--clr-light);
+  color: var(--clr-secondary);
+  font-size: medium;
 }
-
 /*  */
 .manifest {
   padding: 8rem 0;
@@ -318,36 +378,43 @@ p {
   font-size: 7rem;
   font-weight: 700;
   opacity: 0.1;
+  font-family: var(--font-heading);
 }
 .manifest_card h3 {
-  color: var(--clr-secondary);
+  color: var(--clr-light);
   text-transform: capitalize;
   margin-bottom: 1rem;
+  font-size: 2rem;
 }
 .manifest_card p {
   max-width: 60rem;
+  font-size: 1.4rem;
 }
 
 /*  */
 .journey {
   background-color: var(--clr-dark);
-  border-bottom: 0.1px solid var(--clr-secondary);
+  border-bottom: 0.1px solid #12121a;
   padding: 8rem 0;
 }
 .journey_content {
   background: rgb(0, 56, 255, 0.1);
-  padding: 5rem;
+  padding: 7rem;
   text-align: center;
   border-radius: 5rem;
 }
 .journey h1 {
   color: var(--clr-light);
+  font-size: 6rem;
+  line-height: 1;
 }
 .journey small {
   color: var(--clr-accent);
 }
 .journey p {
-  margin-bottom: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  font-size: 1.6rem;
 }
 .journey a {
   color: var(--clr-light);
@@ -361,23 +428,133 @@ p {
 .footer_wrapper {
   display: flex;
   justify-content: space-between;
-  max-width: 120rem;
+  max-width: 100rem;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
 }
 .footer_text {
   max-width: 50rem;
 }
-.footer h4 {
+.footer h3 {
   margin-bottom: 2rem;
   color: var(--clr-tertiary);
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-size: 1.8rem;
 }
+.footer p {
+  font-size: 1.4rem;
+  max-width: 40rem;
+}
+.footer span {
+  color: var(--clr-accent);
+}
+
+.footer h4 {
+  font-size: 1.2rem;
+}
+.footer_connect {
+  margin-left: 30rem;
+}
+
+.footer_text p {
+  font-size: 1.4rem;
+}
+
 .footer_bottom {
   color: var(--clr-secondary);
   display: flex;
   justify-content: space-between;
   padding-top: 3rem;
   margin-top: 2rem;
-  border-top: 0.1px solid var(--clr-secondary);
+  border-top: 0.1px solid #12121a;
+}
+.footer_bottom small {
+  font-size: 1.4rem;
+}
+.footer a {
+  font-size: 1.4rem;
+}
+.footer ul li {
+  margin: 1rem 0;
 }
 
-/* destination */
+/* SECOND PAGE */
+
+/* collection banner */
+.collection {
+  background-color: var(--clr-blue-dark);
+  color: var(--clr-primary);
+  padding: 8rem;
+}
+.collection h1 {
+  font-size: 7.2rem;
+  line-height: 1;
+  margin: 3rem 0;
+}
+.collection p {
+  max-width: 65rem;
+}
+.collection_wrapper {
+  background-color: var(--clr-blue-dark);
+}
+
+/* western area */
+.western {
+  background: var(--clr-blue-dark);
+}
+.western_item span {
+  color: var(--clr-light);
+}
+.western_item svg {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  color: var(--clr-secondary);
+}
+.western_location small {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: var(--clr-secondary);
+}
+
+.western_wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.western_item {
+  background-color: rgba(33, 33, 34, 0.5);
+  border-radius: 2rem;
+  padding: 3rem;
+}
+.western_price {
+  display: flex;
+  justify-content: space-between;
+}
+.western_location {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.western_item span {
+  font-size: 1.2rem;
+  color: var(--clr-secondary);
+}
+.western_price li:last-child span {
+  color: var(--clr-accent);
+}
+.western_item h4 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+.western_item p {
+  margin-bottom: 1.5rem;
+}
+.western_item button {
+  display: block;
+  width: 100%;
+  background-color: var(--clr-accent);
+  padding: 2rem 4rem;
+  border-radius: 5rem;
+  font-size: 1.25rem;
+  border: none;
+}
